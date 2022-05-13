@@ -1,0 +1,92 @@
+#wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.075);
+}
+section.banner {
+    box-shadow: none;
+    text-align: center;
+    flex-direction: row;
+    min-height: 100vh;
+    padding: 4rem 4rem 2rem 4rem;
+}
+section.banner h1 {
+    /* Font Sizes */
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+
+    /* Element Sizes */
+    width: 31.5rem;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+
+    /* Fade-In Animation */
+    -moz-transition: opacity 0.75s ease-in-out, -moz-transform 0.75s ease-in-out;
+    -webkit-transition: opacity 0.75s ease-in-out, -webkit-transform 0.75s ease-in-out;
+    -ms-transition: opacity 0.75s ease-in-out, -ms-transform 0.75s ease-in-out;
+    transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+}
+section.banner .image {
+    /* Positioning */
+    display: inline-block;
+    position: relative;
+    margin: 0 0 2rem 3.5rem;
+    
+    /* Basic Size, Shape, and Color */
+    width: 21rem;
+    height: 21rem;
+    border: 0;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.125);
+    
+    /* Image Grows with Browser */
+    -moz-flex-grow: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-grow: 0;
+    flex-grow: 0;
+    /* Image Shrinks with Browser */
+    -moz-flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
+}
+section.banner .image img {
+    /* Postioning */
+    display: block;
+    -moz-object-position: center;
+    -webkit-object-position: center;
+    -ms-object-position: center;
+    object-position: center;
+    
+    /* Basic Size and Shape */
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+    /* Image Covers Parent Element */
+    -moz-object-fit: cover;
+    -webkit-object-fit: cover;
+    -ms-object-fit: cover;
+    object-fit: cover;
+
+    /* Fade-In Animation */
+    -moz-transition: opacity 0.75s ease-in-out;
+    -webkit-transition: opacity 0.75s ease-in-out;
+    -ms-transition: opacity 0.75s ease-in-out;
+    transition: opacity 0.75s ease-in-out;
+}
+
+@media screen and (orientation:portrait) {
+    section.banner .image {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .image {
+        width: 18.375rem;
+        height: 18.375rem;
+    }
+}

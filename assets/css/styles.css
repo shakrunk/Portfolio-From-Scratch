@@ -1,0 +1,248 @@
+/* Background and Font Family */
+html {
+    background-image: linear-gradient(to bottom left, #2f1968, #2db2bc);
+    /* Fallback if gradients not supported */
+    background-color: #2f1968;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+#landing {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Section Formatting */
+section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+/* Main Header */
+h1 {
+    top: 0;
+    background-color: transparent;
+    border: transparent;
+    
+    text-align: center;
+    color: #8db131;
+
+    font-size: 2em;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Profile picture */
+#profile {
+    border: 5px solid #8db131;
+    border-radius: 50%;
+    padding: 1px;
+    width: 300px;
+}
+
+/* Some useful classes */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.sticky {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+}
+
+/* Bouncing scroll icon */
+.scroll {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333333;
+
+    text-align: center;
+    position: absolute;
+	bottom: 10px;
+	margin-left: auto;
+}
+.scroll i {
+    -webkit-animation: bounce 8s infinite;
+    animation: bounce 8s infinite;
+}
+
+/* Bounce animation for scroll icon */
+@-webkit-keyframes bounce {
+    0%, 7.5%, 15% {transform: translateY(0);}
+    5% {transform: translateY(-30px);}
+    10% {transform: translateY(-15px);}
+}
+@keyframes bounce {
+    0%, 7.5%, 15% {transform: translateY(0);}
+    5% {transform: translateY(-30px);}
+    10% {transform: translateY(-15px);}
+}
+
+/* Hamburger Menu */
+.container {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #333333;
+    color: #2db2bc;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #2db2bc;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Animation for Hamburger Menu*/
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Navigation Bar */
+nav {
+    overflow: hidden;
+    /* background-color: #333333;   */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+nav a {
+    float: left;
+    display: block;
+    color: #2db2bc;
+    text-align: center;
+    background-color: #333333;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 700;
+}
+nav a:hover {
+    background-color: #555555;
+    color: #ffffff;
+}
+.active {
+    background-color: #8db131;
+    color: #2f1968;
+}
+.mobilenav {
+    display: none;
+}
+nav a:hover .bar1, 
+nav a:hover .bar2,
+nav a:hover .bar3 {
+    background-color: #ffffff;
+}
+
+/* Navigation Bar for Mobile */
+@media screen and (max-width: 700px) {
+    /* --- Menu is closed (or menu independant styles) --- */
+    nav {
+        /* The nav pane take full screen */
+        display: absolute;
+        width: 100vw;
+    }
+    nav .overlay { 
+        /* Menu items in overlay get hidden*/
+        height: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    nav .overlay a {
+        /* Closing menu keeps proportions */
+        float: none;
+        display: block;
+        height: 20%;
+        text-align: center;
+    }
+    nav a.mobilenav {
+        /* Things in the mobile nav bar get shown */
+        display: block;
+        height: 55px;
+        /* Make it Curvy */
+        border-top-right-radius: 50%;
+    }
+    nav a.mobilenav#contact {
+        /* The contact button should be on the left */
+        float: right;
+        color: #2e789c;
+        /* Make it Curvy */
+        border-top-right-radius: 0;
+        border-top-left-radius: 50%;
+
+        height: 55px;
+    }
+
+    /* --- Menu is open --- */
+    nav.open .overlay { 
+        /* The overlay gets shown */
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    nav.open .overlay a {
+        float: none;
+        position: relative;
+        height: 20vh;
+        padding: 0%;
+    }
+    nav.open .overlay a div {
+        /* Menu items appear */
+        width: 100%;
+        text-align: center;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        position: absolute;
+        top: 50%;
+    }
+    nav.open a.mobilenav {
+        /* The close menu button is on the bottom left */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        float: left;
+        z-index: 2;
+    }
+    nav.open a.mobilenav#contact {
+        /* Hide the contact button */
+        display: none;
+    }
+
+    /* --- Not Menu-Related --- */
+    /* Change flex */
+    section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+}
