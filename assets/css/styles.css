@@ -209,7 +209,8 @@ nav a:hover .bar3 {
     nav.open .overlay a {
         float: none;
         position: relative;
-        height: 20vh;
+        height: 20vh; /* Fallback for browsers that don't support Custom Properties*/
+        height: calc(var(--vh, 1vh)*20);
         padding: 0%;
     }
     nav.open .overlay a div {
