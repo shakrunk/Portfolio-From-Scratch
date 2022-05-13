@@ -1,3 +1,9 @@
+// ----- ON LOAD ----- //
+// Get the viewport height and calc 'vh' unit
+let vh = window.innerHeight * 0.01; 
+// Set vh
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 // ----- FUNCTIONS ----- //
 // Menu Button Clicked
 function openMenu(menu) {
@@ -16,6 +22,7 @@ function openMenu(menu) {
     menu.classList.toggle("change");
 }
 
+// ----- LISTENERS ----- //
 // We listen to the resize event
 window.addEventListener('resize', () => {
     // Get the viewport height and calc 'vh' unit
