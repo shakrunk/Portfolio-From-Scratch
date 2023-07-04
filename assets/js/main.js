@@ -38,7 +38,7 @@ window.addEventListener('resize', () => {
     document.getElementById("mobileNavSVG").setAttribute('viewBox',`0 0 ${window.innerWidth} ${totalHeight}`);
 
     // Set mobile nav properties based on viewport
-    let curveHeight = totalHeight - 15; // Stop 15 pixels before the bottom
+    let curveHeight = totalHeight - 10; // Stop 15 pixels before the bottom
     let buttonWidth = curveHeight; // make the button a square
     let curveWidth = curveHeight; // 40 pixels
     let betweenWidth = window.innerWidth - (2*buttonWidth) - (2*curveWidth); // Remaining pixels between buttons

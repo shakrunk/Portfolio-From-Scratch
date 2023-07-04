@@ -99,7 +99,7 @@ nav a {
     float: left;
     display: block;
     color: #2db2bc;
-    text-align: center;
+    text-align: end;
     background-color: #333333;
     padding: 8px 16px;
     text-decoration: none;
@@ -123,13 +123,21 @@ nav svg {
 /* Navigation Bar for Mobile */
 @media screen and (max-width: 700px) {
     /* --- Menu is either closed or open --- */
-    
+    nav a.mobilenav {
+        /* Background unnessesary on mobile */
+        background-color: transparent;
+    }
+    nav a:hover {
+        /* Hover effects unnessesary on mobile */
+        background-color: transparent;
+        color: #2db2bc;
+    }
+
     /* Hamburger Menu */
     .container {
         /* Shape, size, and color of the burger menu container*/
         display: inline-block;
         cursor: pointer;
-        background-color: #333333;
         color: #2db2bc;
     }
     .bar1, .bar2, .bar3 {
@@ -139,12 +147,6 @@ nav svg {
         background-color: #2db2bc;
         margin: 6px 0;
         transition: 0.4s;
-    }
-    nav a:hover .bar1, 
-    nav a:hover .bar2,
-    nav a:hover .bar3 {
-        /* Make the burger bars also change colors on hover */
-        background-color: #ffffff;
     }
 
     /* Animation for Hamburger Menu*/
@@ -194,13 +196,13 @@ nav svg {
         bottom: 0;
         left: 0;
         width: 100vw;
-        height: 100px;
+        height: 70px;
     }
     nav .mobilenav {
         /* Things in the mobile nav bar get shown */
         display: block;
         position: relative;
-        height: 70px;
+        height: 50px;
         z-index: 2;
     }
     nav a.mobilenav#contact {
