@@ -88,38 +88,9 @@ h1 {
     10% {transform: translateY(-15px);}
 }
 
-/* Hamburger Menu */
-.container {
-    display: inline-block;
-    cursor: pointer;
-    background-color: #333333;
-    color: #2db2bc;
-}
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #2db2bc;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/* Animation for Hamburger Menu*/
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-}
-.change .bar2 {
-    opacity: 0;
-}
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-}
-
 /* Navigation Bar */
 nav {
     overflow: hidden;
-    /* background-color: #333333;   */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -145,15 +116,55 @@ nav a:hover {
 .mobilenav {
     display: none;
 }
-nav a:hover .bar1, 
-nav a:hover .bar2,
-nav a:hover .bar3 {
-    background-color: #ffffff;
+nav svg {
+    display: none;
 }
 
 /* Navigation Bar for Mobile */
 @media screen and (max-width: 700px) {
+    /* --- Menu is either closed or open --- */
+    
+    /* Hamburger Menu */
+    .container {
+        /* Shape, size, and color of the burger menu container*/
+        display: inline-block;
+        cursor: pointer;
+        background-color: #333333;
+        color: #2db2bc;
+    }
+    .bar1, .bar2, .bar3 {
+        /* Shape, size, and color of the burger menu bars */
+        width: 35px;
+        height: 5px;
+        background-color: #2db2bc;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    nav a:hover .bar1, 
+    nav a:hover .bar2,
+    nav a:hover .bar3 {
+        /* Make the burger bars also change colors on hover */
+        background-color: #ffffff;
+    }
+
+    /* Animation for Hamburger Menu*/
+    .change .bar1 {
+        /* Rotate the top bar down to form the upward part of the cross */
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .change .bar2 {
+        /* Fade out the middle bar */
+        opacity: 0;
+    }
+    .change .bar3 {
+        /* Rotate the buttom bar up to form the downward part of the cross */
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+
     /* --- Menu is closed (or menu independant styles) --- */
+    
     nav {
         /* The nav pane take full screen */
         display: absolute;
@@ -177,25 +188,31 @@ nav a:hover .bar3 {
         height: 20%;
         text-align: center;
     }
-    nav a.mobilenav {
+    nav svg {
+        display: inline-block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100px;
+    }
+    nav .mobilenav {
         /* Things in the mobile nav bar get shown */
         display: block;
-        height: 55px;
-        /* Make it Curvy */
-        border-top-right-radius: 50%;
+        position: relative;
+        height: 70px;
+        z-index: 2;
     }
     nav a.mobilenav#contact {
-        /* The contact button should be on the left */
+        /* The contact button should be on the right */
+        display: block;
+        position: relative;
         float: right;
         color: #2e789c;
-        /* Make it Curvy */
-        border-top-right-radius: 0;
-        border-top-left-radius: 50%;
-
-        height: 55px;
     }
 
     /* --- Menu is open --- */
+    
     nav.open .overlay { 
         /* The overlay gets shown */
         height: 100%;
@@ -237,6 +254,7 @@ nav a:hover .bar3 {
     }
 
     /* --- Not Menu-Related --- */
+    
     /* Change flex */
     section {
         position: relative;

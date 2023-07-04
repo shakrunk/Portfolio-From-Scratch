@@ -45,17 +45,22 @@
             <a href="#"><div><i class="fas fa-bookmark center"></i> Skills</div></a>
             <a href="#"><div><i class="fas fa-user-circle center"></i> About Me</div></a>
         </div>
-        <a href="javascript:void(0);" class="container mobilenav" onclick="openMenu(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            <div class="center" id="menutitle">Menu</div>
-        </a>
-        <a href="#" class="container mobilenav" id="contact">
-            <i class="fas fa-mail-bulk fa-2x"></i>
-            <!--img src="images/icon.contact.svg" alt="contact icon"-->
-            <div class="center">Contact</div>
-        </a>
+        <div>
+            <svg id="mobileNavSVG">
+                <path id="mypath" d="" stroke="none" fill="#333333" />
+                Sorry, your browser does not support inline SVG.
+            </svg>
+            <a href="javascript:void(0);" class="container mobilenav" onclick="openMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="center" id="menutitle">Menu</div>
+            </a>
+            <a href="#" class="container mobilenav" id="contact">
+                <i class="fas fa-mail-bulk fa-2x"></i>
+                <div class="center">Contact</div>
+            </a>
+        </div>
     </nav>
 
     <script src="assets/js/main.js"></script>
